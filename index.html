@@ -9,24 +9,170 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
 
-<title> PERSONAL PORTFOLIO</title>
+ <title> PERSONAL PORTFOLIO</title>
 
-
+ <style>
+    * {box-sizing: border-box}
+    
+    body {font-family: Verdana, sans-serif; margin:0}
+    
+    .mySlides {display: none}
+    
+    img {vertical-align: middle;}
+    
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin: auto;
+    }
+    
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+    
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+    
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+    
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+    
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+    
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
+    </style>
 </head>
 
 
 <body class=" bg-fuchsia-50">
 
+    <script src="index.js"></script>
 
 
-    <h1 class="gap-x-8 justify-center font-bold flex text-4xl pb-20	hover:bg-gray-500 "> <u> PERSONAL PORTFORLIO </u></h1>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="https://media.istockphoto.com/id/537331500/photo/programming-code-abstract-technology-background-of-software-deve.jpg?s=612x612&w=0&k=20&c=jlYes8ZfnCmD0lLn-vKvzQoKXrWaEcVypHnB5MuO-g8=" style="width:100%">
+          <div class="text">Web Development</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="https://img.freepik.com/free-photo/top-view-unrecognizable-hacker-performing-cyberattack-night_1098-18706.jpg?size=626&ext=jpg" style="width:100%">
+          <div class="text">Mobile Software Development</div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="https://img.freepik.com/free-photo/html-css-collage-concept-with-person_23-2150062008.jpg?size=626&ext=jpg" style="width:100%">
+          <div class="text">Electronics Engineering</div>
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+        
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+        </script>
+
+
+ <h1 class="gap-x-8 justify-center font-bold flex text-4xl pb-20	hover:bg-gray-500 "> <u> PERSONAL PORTFORLIO </u></h1>
+
     
-    <div class="size-96	 py-56 bg-no-repeat bg-cover h-fit w-96 rounded-b-lg mx-5 gap-80 shrink flex grow " 
-    style="background-image: url('./IMG/IMG3.jpg')" >
-
-</div> 
-    <h1 class=" text-3xl italic Cambria font-bold mx-3 "> <U> BIO </U> </h1>
-<P class=" mx-3 Courier New italic	font-semibold	 "> My name is Bassey Wealth Idoreyin. 
+    <h1 class=" text-3xl italic Cambria font-bold mx-3"> <U> BIO </U> </h1>
+ <P class=" mx-3 Courier New italic	font-semibold"> My name is Bassey Wealth Idoreyin. 
     I am an alumni of Lagos State university.
     I majored in Medical Lab sci..
     I am came out with a second class upper 
@@ -44,35 +190,37 @@
     I like being independent,
     and I hate depending on others for things.
     I have worked with two top companies so far , 
-    my experience there was very challenging but fun. </P>
+    my experience there was very challenging but fun.
+    <span id="Skills"></span>
+  </P>
 
 
 
 
  <br><br>
+ <h1 class="mx-3 text-3xl italic Cambria font-bold"><u> Skills</u> </h1>
+ <div> 
+  <ul>
+      <li class=" list-outside mx-3 Courier New italic font-semibold"> Architecture</li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold ">Database storage </li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold" > Frameworks</li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold "> Git</li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold ">HTML</li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold">JavaScript </li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold ">Problem solving </li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold">Patience </li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold " > Python</li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold " >API design and development </li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold "> Attention to detail</li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold"> Time management</li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold">API </li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold">Npm </li>
+      <li class=" list-outside mx-3 Courier New italic font-semibold">Database management systems </li>
+      <span id="Skills"></span>
 
-<h1 class=" text-3xl italic Cambria font-bold mx-3 "> <U> SKILLS</U> </h1>
-
-<div> 
-    <ul>
-        <li class=" list-outside mx-3 Courier New italic font-semibold"> Architecture</li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold ">Database storage </li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold" > Frameworks</li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold "> Git</li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold ">HTML</li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold">JavaScript </li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold ">Problem solving </li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold">Patience </li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold " > Python</li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold " >API design and development </li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold "> Attention to detail</li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold"> Time management</li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold">API </li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold">Npm </li>
-        <li class=" list-outside mx-3 Courier New italic font-semibold">Database management systems </li>
-
-    </ul>
-</div>>
+</ul>
+</div>
+ 
 <br><br>
 
 <section id="MY PROJECTS">
@@ -82,21 +230,125 @@
 <P class=" mx-3 Courier New italic font-semibold"> Showcase all my incoming projects here.</P>
 
 <div class="projects mx-3 ">
-    <a href="path/to/My Projects_file.pdf, .word">Download Projects File</a>
+    <a href="C:\Users\lenovo\OneDrive\Documents">Download Projects File</a>
+
+
 
 
 </div> 
 
+<nav class="bg-gray-600 text-white p-4 flex justify-between font-mono fixed w-full top-0">
+        
+    <a href="#" class="hover:text-gray-300 mr-4">HOME</a>
+    <a href="#bio" class="hover:text-gray-300 mr-4">BIO</a>
+    <a href="#skills" class="hover:text-gray-300 mr-4">SKILLS</a>
+    <a href="#project" class="hover:text-gray-300 mr-4">PROJECTS</a>
+    <a href="#contact"  class="hover:text-gray-300 mr-4">CONTACT </a>
+    <a href="https://github.com/Reyinbee22" class="hover:text-gray-300 mr-4" target="_blank">GITHUB</a>
+    <a href="www.linkedin.com/in/wealthbassey" class="hover:text-gray-300" target="_blank">LINKEDIN</a>
+        
+    
+</nav>
+
 </section>
 
 
+<script> const contact = {
+  Phone : +2318104658570 ,
+  Email: "basseyiyene@gmail.com",
+  Address : {
+      Country : "Nigeria",
+      State : "Lagos",
+      City : " Igando"
+  }
+
+}
+
+</script>
+<br><br>
+<form class="form-data">
+  <section>
+    <input id="emailInput" type="email" placeholder="enter your email" />
+    <button >Submit</button>
+  </section>
+  <p id="emailError" style="color: red; display: none;">Please enter a valid email address.</p>
+  <p id="emailValid" style="color: green; display: none;">Email Submitted Successfully</p>
+</form>
+<script> // form validation with regex
+  const form = document.querySelector('.form-data');
+  const emailInput = document.getElementById('emailInput');
+  const emailError = document.getElementById('emailError');
+  const emailSuccess = document.getElementById('emailValid');
+  
+  form.addEventListener('submit', function(event) {
+  
+      // Preventing the default form submission
+      event.preventDefault();
+  
+      // Validating email input using regular expression
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value)) {
+  
+          // checking if email is invalid, display error message and return false to prevent form submission
+          emailError.style.display = 'block';
+          setTimeout(function() {
+             emailError.style.display = 'none';
+         }, 2000);
+          return false;
+      } else {
+  
+          // checking If email is valid, hide error message and allow form submission
+          emailError.style.display = 'none';
+  
+          // display success after submission
+          emailSuccess.style.display = 'block';
+          setTimeout(function() {
+             emailSuccess.style.display = 'none';
+         }, 2000);
+  
+          // form reset after submission
+          form.reset();
+      }
+  });</script>
+
+<form class="Phone Number">
+  <section>
+    <input id="Phone number" type="tel"  placeholder="input your Phone Number" />
+    <button >Submit</button>
+  </section>
+  <p id="Phoneerror" style="color: red; display: none;">Please enter a valid Phone Number.</p>
+  <p id="phoneValid" style="color: green; display: none;">Successfull</p>
+</form>
+<script>  form.addEventListener('submit', function(event)) 
+  
+  // Preventing the default form submission
+  event.preventDefault();
+
+  // Validating phone number input using regular expression
+  const phonenumberregex = ((^+)(234){1}[0–9]{10})|((^234)[0–9]{10})|((^0)(7|8|9){1}(0|1){1}[0–9]{8});
+  if (!phonenumberregex.test(phonenumberInput.value)) {
+
+      // checking if Phone Number is invalid, display error message and return false to prevent form submission
+      Phoneerror.style.display = 'block';
+      setTimeout(function() {
+        Phoneerror.style.display = 'none';
+     }, 2000);
+      return false;
+  } else {
+
+      // checking If email is valid, hide error message and allow form submission
+      Phoneerror.style.display = 'none';
+
+      // display success after submission
+      Phoneerror.style.display = 'block';
+      setTimeout(function() {
+         PhoneSucess.style.display = 'none';
+     }, 5000);
+     // form reset after submission
+     form.reset();
+      }
+</script>
 </body>
    
 </html>
-
-
-
-
-
-
 
