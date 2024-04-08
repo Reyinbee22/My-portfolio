@@ -191,7 +191,7 @@
     and I hate depending on others for things.
     I have worked with two top companies so far , 
     my experience there was very challenging but fun.
-    <span id="Skills"></span>
+    
   </P>
 
 
@@ -218,9 +218,8 @@
       <li class=" list-outside mx-3 Courier New italic font-semibold">Database management systems </li>
       <span id="Skills"></span>
 
-</ul>
-</div>
- 
+    </ul>
+</div>>
 <br><br>
 
 <section id="MY PROJECTS">
@@ -236,19 +235,6 @@
 
 
 </div> 
-
-<nav class="bg-gray-600 text-white p-4 flex justify-between font-mono fixed w-full top-0">
-        
-    <a href="#" class="hover:text-gray-300 mr-4">HOME</a>
-    <a href="#bio" class="hover:text-gray-300 mr-4">BIO</a>
-    <a href="#skills" class="hover:text-gray-300 mr-4">SKILLS</a>
-    <a href="#project" class="hover:text-gray-300 mr-4">PROJECTS</a>
-    <a href="#contact"  class="hover:text-gray-300 mr-4">CONTACT </a>
-    <a href="https://github.com/Reyinbee22" class="hover:text-gray-300 mr-4" target="_blank">GITHUB</a>
-    <a href="www.linkedin.com/in/wealthbassey" class="hover:text-gray-300" target="_blank">LINKEDIN</a>
-        
-    
-</nav>
 
 </section>
 
@@ -311,43 +297,8 @@
       }
   });</script>
 
-<form class="Phone Number">
-  <section>
-    <input id="Phone number" type="tel"  placeholder="input your Phone Number" />
-    <button >Submit</button>
-  </section>
-  <p id="Phoneerror" style="color: red; display: none;">Please enter a valid Phone Number.</p>
-  <p id="phoneValid" style="color: green; display: none;">Successfull</p>
-</form>
-<script>  form.addEventListener('submit', function(event)) 
-  
-  // Preventing the default form submission
-  event.preventDefault();
 
-  // Validating phone number input using regular expression
-  const phonenumberregex = ((^+)(234){1}[0–9]{10})|((^234)[0–9]{10})|((^0)(7|8|9){1}(0|1){1}[0–9]{8});
-  if (!phonenumberregex.test(phonenumberInput.value)) {
 
-      // checking if Phone Number is invalid, display error message and return false to prevent form submission
-      Phoneerror.style.display = 'block';
-      setTimeout(function() {
-        Phoneerror.style.display = 'none';
-     }, 2000);
-      return false;
-  } else {
-
-      // checking If email is valid, hide error message and allow form submission
-      Phoneerror.style.display = 'none';
-
-      // display success after submission
-      Phoneerror.style.display = 'block';
-      setTimeout(function() {
-         PhoneSucess.style.display = 'none';
-     }, 5000);
-     // form reset after submission
-     form.reset();
-      }
-</script>
 </body>
    
 </html>
